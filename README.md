@@ -2,13 +2,13 @@
 
 A distributed key-value store built in Go that keeps data consistent across multiple nodes. If one node goes down, the others keep working and your data stays safe.
 
-It uses the Raft consensus algorithm under the hood — the same approach used by etcd, CockroachDB, and other production systems — to make sure all nodes agree on the same data.
+It uses the Raft consensus algorithm under the hood - the same approach used by etcd, CockroachDB, and other production systems - to make sure all nodes agree on the same data.
 
 ## What it does
 
 - **Store key-value pairs** across a cluster of nodes
-- **Survive failures** — kill any minority of nodes and the cluster keeps going
-- **Stay consistent** — every read returns the latest written value, no stale data
+- **Survive failures** - kill any minority of nodes and the cluster keeps going
+- **Stay consistent** - every read returns the latest written value, no stale data
 - **Automatically elect a new leader** if the current one goes down
 
 ## How it works
@@ -95,13 +95,13 @@ go test ./... -v
 ## Project structure
 
 ```
-cmd/node/        → entry point, wires everything together
-raft/            → Raft consensus engine (election, replication, state)
-rpc/             → gRPC service definitions and client/server
-kv/              → in-memory key-value store
-storage/         → file-based persistence for raft state
-client/          → HTTP API server
-tests/           → unit and integration tests
+cmd/node/        - entry point, wires everything together
+raft/            - Raft consensus engine (election, replication, state)
+rpc/             - gRPC service definitions and client/server
+kv/              - in-memory key-value store
+storage/         - file-based persistence for raft state
+client/          - HTTP API server
+tests/           - unit and integration tests
 ```
 
 ## Tech stack
